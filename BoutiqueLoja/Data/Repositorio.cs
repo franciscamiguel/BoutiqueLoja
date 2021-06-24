@@ -46,7 +46,7 @@ namespace BoutiqueLoja.Data
         {
             context.Update(entidade);
         }
-        public void BuscarProduto<T>(T entidade) where T : class
+        public void BuscarProduto<T>(T entidade) where T : class 
         {
             context.Update(entidade);
         }
