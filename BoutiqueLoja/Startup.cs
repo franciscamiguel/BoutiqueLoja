@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Design;
+using BoutiqueLoja.Bussiness;
+using BoutiqueLoja.Data.ClienteData;
 
 namespace BoutiqueLoja
 {
@@ -28,6 +30,10 @@ namespace BoutiqueLoja
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddScoped<IRepositorio, Repositorio>();
+            services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+
+            services.AddCors();
+            services.AddScoped<ClienteBussiness>();
 
         }
 
@@ -42,6 +48,8 @@ namespace BoutiqueLoja
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthentication();
 

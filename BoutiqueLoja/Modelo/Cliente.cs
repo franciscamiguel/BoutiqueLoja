@@ -12,6 +12,6 @@ namespace BoutiqueLoja.Modelo
         public int CPF { get; set; }
         public string Telefone { get; set; }
         public string Endereco { get; set; }
-        public string Bairro { get; set; }
+        public string Bairro  { get; set; }
     }
 }

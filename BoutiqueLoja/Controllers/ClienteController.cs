@@ -11,18 +11,17 @@ using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace BoutiqueLoja.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
-    public class AlunoController : ControllerBase
+
+ 
+    public class ClienteController : ControllerBase
     {
 
-        private readonly IRepositorio repositorio;
         public readonly ClienteBussiness ClienteBussiness;
 
-        public AlunoController(IRepositorio repositorio, ClienteBussiness clienteBusiness)
+        public ClienteController( ClienteBussiness clienteBusiness)
         {
-            this.repositorio = repositorio;
             this.ClienteBussiness = clienteBusiness;
         }
 
@@ -30,23 +29,17 @@ namespace BoutiqueLoja.Controllers
         public async Task<ActionResult> BuscarCliente(int id)
         {
 
-            var cliente = ClienteBussiness.BuscarCliente(id);
+            var cliente =  ClienteBussiness.BuscarCliente(id);
             return Ok(cliente);
         }
         [HttpGet("exibir-clientes")]
-        public ActionResult ExibirAlunos()
+        public ActionResult ExibirClientes()
         {
             var clientes = ClienteBussiness.ExibirClientes();
             return Ok(clientes);
         }
         /// <returns></returns>
-        [HttpPost("salvar-cliente")]
-        public async Task<IActionResult> SalvarCliente(Cliente cliente)
-        {
-            var _cliente = await ClienteBussiness.SalvarCliente(cliente);
-
-            return Ok(_cliente);
-        }
+     
 
         [HttpPut("atualizar-cliente/{id}")]
         public async Task<ActionResult> AtualizarCliente(Cliente cliente)
@@ -61,7 +54,7 @@ namespace BoutiqueLoja.Controllers
         [HttpDelete("excluir-cliente")]
         public async Task<ActionResult> ExcluirCliente(Cliente cliente)
         {
-            repositorio.ExcluirCliente(cliente);
+            await ClienteBussiness.ExcluirCliente(cliente);
 
             return Ok();
         }
