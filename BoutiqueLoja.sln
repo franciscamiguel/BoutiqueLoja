@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoutiqueLoja", "BoutiqueLoja\BoutiqueLoja.csproj", "{5F31BA69-9472-4CE9-B6A3-3F262A7B2415}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoutiqueLoja", "BoutiqueLoja\BoutiqueLoja.csproj", "{5F31BA69-9472-4CE9-B6A3-3F262A7B2415}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pontp-web-api", "pontp-web-api\pontp-web-api.csproj", "{72867329-870B-4325-861D-29B287281D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5F31BA69-9472-4CE9-B6A3-3F262A7B2415}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F31BA69-9472-4CE9-B6A3-3F262A7B2415}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F31BA69-9472-4CE9-B6A3-3F262A7B2415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72867329-870B-4325-861D-29B287281D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72867329-870B-4325-861D-29B287281D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72867329-870B-4325-861D-29B287281D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72867329-870B-4325-861D-29B287281D3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

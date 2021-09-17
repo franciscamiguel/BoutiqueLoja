@@ -1,4 +1,4 @@
-﻿using BoutiqueLoja.Data;
+﻿using BoutiqueLoja.Data.ClienteData;
 using BoutiqueLoja.Modelo;
 using System;
 using System.Collections.Generic;
@@ -9,8 +9,8 @@ namespace BoutiqueLoja.Bussiness
 {
     public class ClienteBussiness
     {
-        private readonly IRepositorio repositorio;
-        public ClienteBussiness(IRepositorio repositorio)
+        private readonly IClienteRepositorio repositorio;
+        public ClienteBussiness(IClienteRepositorio repositorio)
         {
             this.repositorio = repositorio;
 
@@ -44,6 +44,13 @@ namespace BoutiqueLoja.Bussiness
             return null;
         }
 
-      
+        public async Task ExcluirCliente(Cliente cliente)
+        {
+            repositorio.ExcluirCliente(cliente);
+            await repositorio.Salvar();
+        }
+
+
+
     }
 }

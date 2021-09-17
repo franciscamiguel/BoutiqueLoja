@@ -14,41 +14,15 @@ namespace BoutiqueLoja.Data
         {
             this.context = context;
         }
+
         public void Adiconar<T>(T entidade) where T : class =>
          context.Add(entidade);
 
-        public Cliente BuscarCliente(int id)
-        {
-            var Cliente = context.Clientes
-                .FirstOrDefault(a => a.Id == id);
-
-            return Cliente;
-        }
-        public void AtualizarCliente<T>(T entidade) where T : class
-        {
+        public void Atualizar<T>(T entidade) where T : class => 
             context.Update(entidade);
-        }
+
+        public void Excluir<T>(T entidade) where T : class => context.Remove(entidade);
+
         public async Task<bool> Salvar() => await context.SaveChangesAsync() > 0;
-
-        public void ExcluirCliente<T>(T entidade) where T : class
-        {
-            context.Remove(entidade);
-        }
-        public List<Cliente> BuscarClientes()
-        {
-            return context.Clientes.ToList();
-        }
-        public void BuscarFornecedor<T>(T entidade) where T : class
-        {
-            context.Update(entidade);
-        }
-        public void BuscarVendedor<T>(T entidade) where T : class
-        {
-            context.Update(entidade);
-        }
-        public void BuscarProduto<T>(T entidade) where T : class 
-        {
-            context.Update(entidade);
-        }
     }
 }
